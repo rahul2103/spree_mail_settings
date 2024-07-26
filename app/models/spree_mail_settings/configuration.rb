@@ -1,5 +1,5 @@
 module SpreeMailSettings
-  class Configuration < Spree::Preferences::Configuration
+  class Configuration < ::Spree::Preferences::Configuration
     MAIL_AUTH = %w(None plain login cram_md5).freeze
     SECURE_CONNECTION_TYPES = %w(None SSL TLS).freeze
 

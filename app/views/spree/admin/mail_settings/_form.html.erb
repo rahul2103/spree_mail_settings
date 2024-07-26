@@ -14,7 +14,6 @@
           <%= f.text_field :mails_from, class: 'form-control' %>
         </div>
 
-
         <div class="form-group">
           <%= f.label :mail_bcc %>
           <%= f.text_field :mail_bcc, class: 'form-control' %>
@@ -42,12 +41,12 @@
 
         <div class="form-group">
           <%= f.label :secure_connection_type %>
-          <%= f.select :secure_connection_type, ::SpreeMailSettings::Configuration::SECURE_CONNECTION_TYPES, class: 'select2' %>
+          <%= f.select :secure_connection_type, ::SpreeMailSettings::Configuration::SECURE_CONNECTION_TYPES, {}, class: 'select2' %>
         </div>
 
         <div class="form-group">
           <%= f.label :mail_auth_type %>
-          <%= f.select :mail_auth_type, ::SpreeMailSettings::Configuration::MAIL_AUTH, class: 'select2' %>
+          <%= f.select :mail_auth_type, ::SpreeMailSettings::Configuration::MAIL_AUTH, {}, class: 'select2' %>
         </div>
 
         <div class="form-group">
@@ -57,7 +56,7 @@
 
         <div class="form-group">
           <%= f.label :smtp_password %>
-          <%= f.password_field :smtp_password, class: 'form-control', value: current_store.mail_setting.smtp_password %>
+          <%= f.password_field :smtp_password, class: 'form-control', value: current_store.try(:mail_setting).try(:smtp_password) %>
         </div>
         <%= f.hidden_field :store_id, value: current_store.id %>
       </fieldset>

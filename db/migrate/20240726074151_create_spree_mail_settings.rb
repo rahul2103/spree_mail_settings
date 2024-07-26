@@ -1,4 +1,4 @@
-class CreateSpreeMailSettings < ActiveRecord::Migration[7.0]
+class CreateSpreeMailSettings < ActiveRecord::Migration[6.1]
   def change
     create_table :spree_mail_settings do |t|
       t.string :mails_from, default: 'spree@example.com'
